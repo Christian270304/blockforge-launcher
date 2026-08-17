@@ -79,18 +79,19 @@ body {
     border-radius: 50%;
 
     display: block;
+    cursor: pointer;
 }
 
 .traffic i:nth-child(1) {
-    background: #ff5f57;
-}
-
-.traffic i:nth-child(2) {
     background: #febc2e;
 }
 
-.traffic i:nth-child(3) {
+.traffic i:nth-child(2) {
     background: #28c840;
+}
+
+.traffic i:nth-child(3) {
+    background: #ff5f57;
 }
 
 

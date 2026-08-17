@@ -1,72 +1,77 @@
 const { invoke } = window.__TAURI__.core;
+const { getCurrentWindow } = window.__TAURI__.window;
 
-let greetInputEl;
-let greetMsgEl;
+const appWindow = getCurrentWindow();
 
-
-
-window.addEventListener("DOMContentLoaded", () => {
-  const navigationButtons =
-            document.querySelectorAll(".nav");
-
-        const views =
-            document.querySelectorAll(".view");
+const titlebar = document.getElementById("titlebar");
 
 
-        navigationButtons.forEach((button) => {
+// ==========================================
+// ARRASTRAR VENTANA
+// ==========================================
 
-            button.addEventListener("click", () => {
+titlebar.addEventListener("mousedown", async (event) => {
 
-                navigationButtons.forEach((item) => {
-                    item.classList.remove("active");
-                });
+    // Solo botón izquierdo del ratón
+    if (event.button !== 0) return;
 
-                views.forEach((view) => {
-                    view.classList.remove("on");
-                });
+    // No arrastrar al pulsar los botones
+    if (event.target.closest("#window-controls")) return;
 
-
-                button.classList.add("active");
-
-
-                const viewId = button.dataset.v;
-
-                document
-                    .getElementById(viewId)
-                    .classList.add("on");
-
-            });
-
-        });
-
-
-        const playButton =
-            document.getElementById("play");
-
-        const progressBar =
-            document.getElementById("bar");
-
-        const percentage =
-            document.getElementById("pct");
-
-        const status =
-            document.getElementById("status");
-
-
-        playButton.addEventListener("click", () => {
-
-            progressBar.style.width = "100%";
-
-            percentage.textContent = "100%";
-
-            status.textContent =
-                "Todo actualizado";
-
-            playButton.textContent =
-                "▶ ABRIR MINECRAFT";
-
-        });
-
+    await appWindow.startDragging();
 });
 
 
+// ==========================================
+// DOBLE CLICK → MAXIMIZAR / RESTAURAR
+// ==========================================
+
+titlebar.addEventListener("dblclick", async (event) => {
+
+    if (event.target.closest("#window-controls")) return;
+
+    await appWindow.toggleMaximize();
+});
+
+
+// ==========================================
+// MINIMIZAR
+// ==========================================
+
+document
+    .getElementById("minimize-btn")
+    .addEventListener("click", async () => {
+
+        await appWindow.minimize();
+
+    });
+
+
+// ==========================================
+// MAXIMIZAR / RESTAURAR
+// ==========================================
+
+document
+    .getElementById("maximize-btn")
+    .addEventListener("click", async () => {
+
+        await appWindow.toggleMaximize();
+
+    });
+
+
+// ==========================================
+// CERRAR
+// ==========================================
+
+document
+    .getElementById("close-btn")
+    .addEventListener("click", async () => {
+
+        await appWindow.close();
+
+    });
+
+
+
+    document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));b.classList.add("active");document.getElementById(b.dataset.v).classList.add("on")});play.onclick=()=>{bar.style.width="100%";pct.textContent="100%";status.textContent="Todo actualizado";play.textContent="▶　ABRIR MINECRAFT"}
