@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script defer  src="main.js"></script>
+
+    <title>BlockForge Launcher Concept</title>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =====================================================
+             BARRA SUPERIOR
+             ===================================================== -->
+
+        <div class="titlebar">
+            <b>BlockForge LAUNCHER — V1.0.9</b>
+
+            <div class="traffic">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+        </div>
+
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside>
+
+            <div class="brand">
+                <h1>BlockForge</h1>
+                <p>PLAY · EXPLORE · CREATE</p>
+            </div>
+
+            <nav>
+                <button
+                    class="nav active"
+                    data-v="home"
+                >
+                    INICIO
+                </button>
+
+                <button
+                    class="nav"
+                    data-v="news"
+                >
+                    NOTICIAS
+                </button>
+
+                <button
+                    class="nav"
+                    data-v="mods"
+                >
+                    MODS
+                </button>
+            </nav>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <div>
+                    <b>ZETILAX_Z</b>
+                    <span>Microsoft · conectado</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             CONTENIDO
+             ===================================================== -->
+
+        <main>
+
+            <!-- Ticker -->
+
+            <div class="ticker">
+                <b>● NOTICIAS</b>
+
+                Launcher v1.0.9 disponible
+                · Nuevos mods agregados
+                · Servidor actualizado
+                · Evento este fin de semana
+            </div>
+
+
+            <!-- =================================================
+                 INICIO
+                 ================================================= -->
+
+            <section
+                id="home"
+                class="view on home"
+            >
+
+                <div class="hero">
+
+                    <div class="geometry"></div>
+
+                    <div class="copy">
+
+                        <div class="eyebrow">
+                            BlockForge / TEMPORADA ACTUAL
+                        </div>
+
+                        <h2>
+                            Tu mundo.
+                            <span>Listo para continuar.</span>
+                        </h2>
+
+                        <p>
+                            Una experiencia directa:
+                            actualizaciones automáticas,
+                            mods sincronizados y acceso
+                            inmediato al servidor.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Estado del servidor -->
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <small>● SERVIDOR</small>
+                            <b class="online">ONLINE</b>
+                        </div>
+
+                        <div class="stat">
+                            <small>JUGADORES</small>
+                            <b>4 / 20</b>
+                        </div>
+
+                        <div class="stat">
+                            <small>VERSIÓN</small>
+                            <b>1.20.1 FORGE</b>
+                        </div>
+
+                        <div class="stat">
+                            <small>PING</small>
+                            <b>28 MS</b>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Noticias + sesión -->
+
+                <div class="lower">
+
+                    <div class="news">
+
+                        <div class="head">
+                            <b>ÚLTIMAS NOVEDADES</b>
+                            <span>VER TODAS →</span>
+                        </div>
+
+                        <div class="newsrow">
+
+                            <div class="story">
+                                <time>HOY</time>
+
+                                <b>Launcher actualizado</b>
+
+                                <p>
+                                    Mejoras de estabilidad.
+                                </p>
+                            </div>
+
+
+                            <div class="story">
+                                <time>AYER</time>
+
+                                <b>Nuevos mods</b>
+
+                                <p>
+                                    Dos nuevas incorporaciones.
+                                </p>
+                            </div>
+
+
+                            <div class="story">
+                                <time>12 AGO</time>
+
+                                <b>Servidor optimizado</b>
+
+                                <p>
+                                    Rendimiento mejorado.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sesión -->
+
+                    <div class="server">
+
+                        <div class="head">
+                            <b>SESIÓN</b>
+                            <span>LIVE</span>
+                        </div>
+
+                        <strong>2h 14m</strong>
+
+                        <p>
+                            Última partida
+                            <br>
+                            BlockForge Survival
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTICIAS
+                 ================================================= -->
+
+            <section
+                id="news"
+                class="view page"
+            >
+
+                <h2>Noticias</h2>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <b>Launcher 1.0.9</b>
+
+                        <p>
+                            Nuevo diseño y mejoras internas.
+                        </p>
+                    </div>
+
+
+                    <div class="card">
+                        <b>Actualización del servidor</b>
+
+                        <p>
+                            Contenido y optimizaciones.
+                        </p>
+                    </div>
+
+
+                    <div class="card">
+                        <b>Evento</b>
+
+                        <p>
+                            Nuevo evento para la comunidad.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MODS
+                 ================================================= -->
+
+            <section
+                id="mods"
+                class="view page"
+            >
+
+                <h2>Mods</h2>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <b>Create</b>
+                        <p>Automatización.</p>
+                    </div>
+
+                    <div class="card">
+                        <b>Alex's Mobs</b>
+                        <p>Nuevas criaturas.</p>
+                    </div>
+
+                    <div class="card">
+                        <b>Farmer's Delight</b>
+                        <p>Agricultura y cocina.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =====================================================
+             BARRA INFERIOR
+             ===================================================== -->
+
+        <footer>
+
+            <!-- Modpack -->
+
+            <div class="pack">
+                <small>MODPACK</small>
+                <b>BlockForge v1.0.9</b>
+            </div>
+
+
+            <!-- Descarga -->
+
+            <div class="progress">
+
+                <div class="prow">
+
+                    <span id="status">
+                        Comprobando archivos
+                    </span>
+
+                    <span id="pct">
+                        72%
+                    </span>
+
+                </div>
+
+                <div class="track">
+                    <div
+                        class="bar"
+                        id="bar"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Acciones -->
+
+            <div class="actions">
+
+                <button
+                    class="play"
+                    id="play"
+                >
+                    ▶ JUGAR
+                </button>
+
+                <button class="settings">
+                    ⚙
+                </button>
+
+            </div>
+
+        </footer>
+
+    </div>
+</body>
+</html>

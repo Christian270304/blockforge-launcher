@@ -1,0 +1,710 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0c0d10;
+    --panel: #111318;
+    --line: #242832;
+    --text: #f3f4f7;
+    --muted: #777e8b;
+    --blue: #e97963;
+}
+
+body {
+    margin: 0;
+    background: #07080a;
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+    ESTRUCTURA PRINCIPAL
+    ========================================================= */
+
+.app {
+    height: 100vh;
+
+    border: 1px solid #252932;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 235px 1fr;
+    grid-template-rows: 36px 1fr 92px;
+
+    background: #0b0d11;
+}
+
+
+/* =========================================================
+    BARRA SUPERIOR
+    ========================================================= */
+
+.titlebar {
+    grid-column: 1 / -1;
+
+    border-bottom: 1px solid #20242b;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    background: #0e1014;
+}
+
+.titlebar b {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #737a86;
+}
+
+.traffic {
+    margin-left: auto;
+
+    display: flex;
+    gap: 8px;
+}
+
+.traffic i {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+.traffic i:nth-child(1) {
+    background: #ff5f57;
+}
+
+.traffic i:nth-child(2) {
+    background: #febc2e;
+}
+
+.traffic i:nth-child(3) {
+    background: #28c840;
+}
+
+
+/* =========================================================
+    SIDEBAR
+    ========================================================= */
+
+aside {
+    border-right: 1px solid var(--line);
+
+    display: flex;
+    flex-direction: column;
+
+    background: #0d0f13;
+}
+
+
+/* Logo / marca */
+
+.brand {
+    padding: 30px 24px 27px;
+
+    border-bottom: 1px solid #1e2229;
+}
+
+.brand h1 {
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    margin: 7px 0 0;
+
+    font-size: 8px;
+    letter-spacing: 2.4px;
+
+    color: #5e6571;
+}
+
+
+/* Navegación */
+
+nav {
+    padding: 22px 13px;
+
+    display: grid;
+    gap: 5px;
+}
+
+.nav {
+    height: 44px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+
+    text-align: left;
+
+    padding: 0 14px;
+
+    color: #747b87;
+
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.nav.active,
+.nav:hover {
+    background: #171a20;
+    color: #f2f3f5;
+}
+
+.nav.active::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-right: 12px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    box-shadow: 0 0 10px #e9796388;
+}
+
+
+/* Perfil */
+
+.profile {
+    margin: auto 15px 18px;
+
+    padding: 12px;
+
+    border: 1px solid #252932;
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    background: #101216;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #80583d,
+        #47765f
+    );
+
+    display: grid;
+    place-items: center;
+}
+
+.profile b {
+    font-size: 10px;
+}
+
+.profile span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #656c78;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+    CONTENIDO PRINCIPAL
+    ========================================================= */
+
+main {
+    position: relative;
+    overflow: auto;
+}
+
+
+/* Ticker superior */
+
+.ticker {
+    height: 30px;
+
+    border-bottom: 1px solid #1d2128;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    color: #626975;
+
+    font-size: 8px;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker b {
+    color: #98a0ac;
+    margin-right: 18px;
+}
+
+
+/* =========================================================
+    VISTAS
+    ========================================================= */
+
+.view {
+    display: none;
+}
+
+.view.on {
+    display: block;
+}
+
+.home {
+    padding: 25px;
+}
+
+
+/* =========================================================
+    HERO PRINCIPAL
+    ========================================================= */
+
+.hero {
+    height: 330px;
+
+    border: 1px solid #242933;
+    border-radius: 15px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: radial-gradient(
+        circle at 73% 45%,
+        #392726 0,
+        #211a1c 25%,
+        #121317 50%,
+        #0e1014 75%
+    );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #0e1014 4%,
+        #0e1014e8 46%,
+        transparent 78%
+    );
+}
+
+
+/* Geometría decorativa */
+
+.geometry {
+    position: absolute;
+
+    right: 11%;
+    top: 55px;
+
+    width: 220px;
+    height: 220px;
+
+    border: 1px solid #49383a;
+    border-radius: 50%;
+}
+
+.geometry::before,
+.geometry::after {
+    content: "";
+
+    position: absolute;
+    inset: 38px;
+
+    border: 1px solid #46383b;
+    border-radius: 20px;
+
+    transform: rotate(45deg);
+}
+
+.geometry::after {
+    inset: 74px;
+
+    border-color: #77524d;
+
+    background: #e9796310;
+}
+
+
+/* Texto del hero */
+
+.copy {
+    position: relative;
+    z-index: 2;
+
+    padding: 50px 43px;
+}
+
+.eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.6px;
+
+    color: #c98779;
+}
+
+.copy h2 {
+    margin: 15px 0;
+
+    font-size: 35px;
+    font-weight: 580;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+}
+
+.copy h2 span {
+    display: block;
+
+    color: #9299a5;
+}
+
+.copy p {
+    max-width: 365px;
+
+    color: #777e8a;
+
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+    ESTADO DEL SERVIDOR
+    ========================================================= */
+
+.stats {
+    position: absolute;
+    z-index: 3;
+
+    left: 20px;
+    right: 20px;
+    bottom: 17px;
+
+    height: 45px;
+
+    border: 1px solid #252a34;
+    border-radius: 10px;
+
+    background: #0d1015dd;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+}
+
+.stat {
+    padding: 0 22px;
+
+    border-right: 1px solid #252a34;
+}
+
+.stat:first-child {
+    padding-left: 0;
+}
+
+.stat:last-child {
+    border: 0;
+}
+
+.stat small {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+
+    color: #59616d;
+}
+
+.stat b {
+    margin-left: 7px;
+
+    font-size: 9px;
+
+    color: #b3b8c0;
+}
+
+.online {
+    color: #74c69d !important;
+}
+
+
+/* =========================================================
+    PARTE INFERIOR DEL HOME
+    ========================================================= */
+
+.lower {
+    margin-top: 12px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 12px;
+}
+
+.news,
+.server {
+    border: 1px solid #242832;
+    border-radius: 13px;
+
+    background: #0f1116;
+
+    padding: 16px;
+}
+
+.head {
+    margin-bottom: 14px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #8b929e;
+
+    font-size: 9px;
+    letter-spacing: 0.8px;
+}
+
+.head span {
+    color: #5f6671;
+}
+
+
+/* Noticias */
+
+.newsrow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.story {
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background: #14171c;
+}
+
+.story time {
+    color: #5e6570;
+
+    font-size: 7px;
+}
+
+.story b {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+}
+
+.story p {
+    color: #686f7b;
+
+    font-size: 8px;
+    line-height: 1.45;
+}
+
+
+/* Sesión */
+
+.server strong {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.server p {
+    color: #69707c;
+
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+    PÁGINAS NOTICIAS / MODS
+    ========================================================= */
+
+.page {
+    padding: 28px;
+}
+
+.page h2 {
+    font-size: 23px;
+    font-weight: 550;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card {
+    min-height: 125px;
+
+    border: 1px solid #252932;
+    border-radius: 12px;
+
+    padding: 17px;
+
+    background: #101216;
+}
+
+.card b {
+    font-size: 10px;
+}
+
+.card p {
+    color: #6e7581;
+
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+    BARRA INFERIOR
+    ========================================================= */
+
+footer {
+    grid-column: 1 / -1;
+
+    border-top: 1px solid #252932;
+
+    background: #0d0f13;
+
+    display: grid;
+    grid-template-columns: 235px 1fr auto;
+    align-items: center;
+}
+
+
+/* Información del modpack */
+
+.pack {
+    padding: 0 25px;
+}
+
+.pack small {
+    display: block;
+
+    color: #5c6370;
+
+    font-size: 7px;
+    letter-spacing: 1.4px;
+}
+
+.pack b {
+    font-size: 10px;
+}
+
+
+/* Progreso */
+
+.progress {
+    padding: 0 25px;
+}
+
+.prow {
+    margin-bottom: 9px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #656c78;
+
+    font-size: 8px;
+}
+
+.track {
+    height: 3px;
+
+    border-radius: 4px;
+
+    background: #242832;
+
+    overflow: hidden;
+}
+
+.bar {
+    width: 72%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #d96755,
+        #ef9b7f
+    );
+}
+
+
+/* Botones inferiores */
+
+.actions {
+    display: flex;
+    gap: 9px;
+
+    padding-right: 22px;
+}
+
+.play {
+    min-width: 210px;
+    height: 50px;
+
+    border: 1px solid #9b5d52;
+    border-radius: 10px;
+
+    background: #261817;
+    color: #fff1ed;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+
+    cursor: pointer;
+}
+
+.settings {
+    width: 50px;
+
+    border: 1px solid #2a2f38;
+    border-radius: 10px;
+
+    background: #121419;
+    color: #737b87;
+}
