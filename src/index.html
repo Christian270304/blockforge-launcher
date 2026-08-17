@@ -310,6 +310,96 @@
 
             </section>
 
+            <!-- =================================================
+                 CONFIGURACIÓN
+                 ================================================= -->
+
+            <section id="settings" class="view page settings-page">
+
+                <div class="settings-header">
+                    <div>
+                        <span class="settings-eyebrow">BLOCKFORGE / CONFIGURACIÓN</span>
+                        <h2>Ajustes</h2>
+                        <p>Configura el comportamiento del launcher y Minecraft.</p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="settings-section">
+                        <div class="settings-section-title">
+                            <span>MINECRAFT</span>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <b>Memoria RAM</b>
+                                <p>Memoria máxima asignada a Minecraft.
+                                    <span id="total-ram"></span>
+                                </p>
+                            </div>
+
+                            <div class="ram-control">
+                                <input
+                                    id="ram-slider"
+                                    type="range"
+                                    min="8"
+                                    max="32"
+                                    value="8"
+                                    step="1"
+                                >
+
+                                <span id="ram-value">8 GB</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <b>Java</b>
+                                <p>Versión utilizada para ejecutar Minecraft.</p>
+                            </div>
+
+                            <span class="setting-value">
+                                Java 17
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="settings-section">
+                        <div class="settings-section-title">
+                            <span>LAUNCHER</span>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <b>Cerrar al jugar</b>
+                                <p>Cierra BlockForge cuando Minecraft se inicie.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input id="close-on-launch" type="checkbox">
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <b>Actualizaciones automáticas</b>
+                                <p>Comprueba nuevas versiones al iniciar.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input id="auto-update" type="checkbox" checked>
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
         </main>
 
 
@@ -364,7 +454,7 @@
                     ▶ JUGAR
                 </button>
 
-                <button class="settings">
+                <button class="settings" id="settings-btn">
                     ⚙
                 </button>
 
